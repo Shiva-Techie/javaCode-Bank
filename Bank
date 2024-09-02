@@ -1,0 +1,85 @@
+import java.util.Scanner;
+class Bank
+{
+    void credit()
+    {
+        int cr,act ,Tb, bal=1000;
+        Scanner sc=new Scanner(System.in);
+        System.out.println("Enter Your Acount Number");
+        act=sc.nextInt();
+        System.out.println("Enter credit amount");
+        cr=sc.nextInt();
+        Tb=cr+1000;
+        System.out.println("Total bank balance is: "+Tb);
+        
+    }
+    void withdrawa()
+    {
+        int wd,act ,Tb, bal=1000;
+        Scanner sc=new Scanner(System.in);
+        System.out.println("Enter Your Acount Number");
+        act=sc.nextInt();
+        System.out.println("Enter withdraw amount");
+        wd=sc.nextInt();
+        Tb=1000-wd;
+        System.out.println("Total bank balance is: "+Tb);
+    }
+}
+class SBI extends Bank
+{
+   void input()
+   {
+    String name="Shiv";
+    System.out.println("Name is: "+name);
+   } 
+}
+class PNB extends Bank
+{
+    void output()
+    {
+        String name="Shiv";
+        System.out.println("Name is: "+name);
+    }
+}
+class Main
+{
+    public static void main(String[] args)
+    {
+        System.out.println("    SBI Details      ");
+        SBI b=new SBI();
+        {
+        b.input();
+        int n;
+        Scanner sc1=new Scanner(System.in);
+        System.out.println("Enter '1' for credit and '2' for Withdraw");
+        n=sc1.nextInt();
+        if(n==1)
+        {
+            b.credit();
+        }
+        if(n==2)
+        {
+            b.withdrawa();
+        }
+        }
+        System.out.println("\n");
+        System.out.println("      PNB detail         ");
+        PNB c=new PNB();
+        {
+        c.output();
+        int n1;
+        Scanner sc2=new Scanner(System.in);
+        System.out.println("Enter '1' for credit and '2' for Withdraw");
+        n1=sc2.nextInt();
+        if(n1==1)
+        {
+            c.credit();
+        }
+        if(n1==2)
+        {
+            c.withdrawa();
+        }
+    }
+    } 
+
+}
